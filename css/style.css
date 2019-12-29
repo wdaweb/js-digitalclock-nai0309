@@ -1,0 +1,112 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  background: #2d2d2d;
+  /* font-family: 'Josefin Sans', sans-serif; */
+  /* font-family: 'Monoton', cursive; */
+  font-family: "Sigmar One", cursive;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+section {
+  height: 80%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 3px 3px 0px tomato, 6px 6px 0px rgb(241, 229, 89),0px 0px 10px white;
+  letter-spacing: 4px;
+  height: 100%;
+}
+
+h1 {
+  /* font-family: 'Josefin Sans', sans-serif; */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  color: white;
+  text-align: center;
+  line-height: 4rem;
+  text-transform: uppercase;
+  text-shadow: 1.5px 1.5px 1.5px rgb(21, 21, 21), 0 0 4px rgb(173, 171, 171), 0 0 12px rgb(249, 245, 217),
+    0 0 16px rgb(37, 77, 180);
+  font-size: 2rem;
+  font-weight: 100;
+  letter-spacing: 5px;
+  /* border-bottom:0.1rem solid white; */
+  box-shadow: 0 2px 5px rgb(173, 171, 171), 0 4px 15px rgb(249, 245, 217),
+    0 6px 20px rgb(37, 77, 180);
+}
+
+.left {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 3rem;
+  text-shadow: 2px 2px 0px tomato, 3px 3px 0px rgb(241, 229, 89),4px 4px 5px rgb(0, 0, 0),0px 0px 10px white;
+}
+
+.countdown {
+  display: flex;
+  animation: sec 1s linear infinite;
+}
+
+.timepie {
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  font-size: 3rem;
+  animation: timepie 2s linear infinite;
+}
+
+.day {
+  color: aliceblue;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  background: none;
+}
+.day span {
+  font-size: 8rem;
+  background: none;
+}
+
+@keyframes sec{
+  from{
+    text-shadow: 3px 3px 0px tomato, 6px 6px 0px rgb(165, 89, 241),0px 0px 5px white;
+  }to{
+    text-shadow: 3px 3px 0px rgb(241, 229, 89), 6px 6px 0px tomato ,0px 0px 20px white;
+  }
+}
+
+@media (max-width: 520px) {
+  h1 {
+    height: auto;
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
+  .countdown {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+  .left {
+    margin: 0;
+  }
+  .container {
+    height: auto;
+  }
+  .day {
+    margin: 0;
+    height: 170px;
+  }
+}

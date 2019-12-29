@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>js-digitalclock</title>
+
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Monoton|Sigmar+One&display=swap" rel="stylesheet">  <!-- custom css -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <section>
+    <h1></h1>
+    <div class="container">
+    <div class="day"></div>
+    <div class="countdown">
+        <div class="timepie hour"></div>
+        <div class="timepie min"></div>
+        <div class="timepie sec"></div>
+    </div>
+    <div class="left">left</div>
+  </div>
+  </section>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+
+  <script>
+    var time=new Date();
+    var year=time.getUTCFullYear();
+
+    function countdown(){
+      let deadline=new Date(`01/01/${year+1}`);
+      let nowtime=new Date();
+      let getdead=deadline.getTime();
+      let getnow=nowtime.getTime();
+      let diff=getdead-getnow;
+      let s=Math.floor((diff/1000)%60);
+      let m=Math.floor((diff/1000/60)%60);
+      let h=Math.floor((diff/1000/60/60)%24);
+      let d=Math.floor(diff/1000/60/60/24);
+      let day=(d==1)?"day":"days";
+     
+      $('.day').html(`<i><span>${d} </span> ${day} and</i>`);
+      $('.hour').text(`${h} hr`);
+      $('.min').text(`${m} min`);
+      $('.sec').text(`${s} sec`);
+      $('h1').text(`countdown to ${year+1} New Year's Eve`);      
+    }
+
+    var run=setInterval(countdown,1000);
+
+
+   
+
+</script> 
+
+
+
+</body>
+</html>
